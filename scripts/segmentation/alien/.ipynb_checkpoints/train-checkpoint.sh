@@ -1,0 +1,12 @@
+python3 train_seg.py train \
+  --dataroot ../dataset/Data_gen_256/val \
+  --test_dataroot ../dataset/Data_gen_256/test \
+	--weight_decay 0.05 --optim adamw \
+	--lr 2e-4 --n_epoch 301 --gamma 0.1 \
+	--batch_size 28 --heads 6 --patch_size 64 \
+	--dim 384 --encoder_depth 12 \
+	--decoder_depth 6 --decoder_dim 512 --decoder_num_heads 16 \
+	--channel 13 --augment_scale --augment_orient \
+	--name "alien" --face_pos --lw1 2 --lw2 2 \
+	--dataset_name alien --seg_parts 50 \
+	--drop_path 0.4 
